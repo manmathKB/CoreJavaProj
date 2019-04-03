@@ -52,7 +52,8 @@ public class ArrayOperations {
 	//insert array
 	public static void insertArray(int src[], int tar[], int srcLen, int loc) { // srcLen=sizeOfTheArray i.e. no of elem
 																				// in array
-		if (loc + tar.length <= src.length) {
+		//if (loc + tar.length <= src.length) {
+		try {
 			// increasing size of array for insertion                         // loc=inWhich loc you want to insert tar[]
 			for (int i = srcLen-1 ; i >= loc; i--) {
 				src[i + tar.length] = src[i];
@@ -67,8 +68,11 @@ public class ArrayOperations {
 			for (int i = 0; i < src.length; i++) {
 				System.out.println(src[i]);
 			}
-		} else
-			System.out.println("change location, May cause Exception");
+		/*} else
+			System.out.println("change location, May cause Exception");*/
+		}catch(ArrayIndexOutOfBoundsException ae) {
+			System.out.println("change the location");
+		}
 	}
 	
 
@@ -80,7 +84,7 @@ public class ArrayOperations {
 		sc = new Scanner(System.in);
 		System.out.println("enter 1st array length");
 		len = sc.nextInt();
-		a = new int[len + 5];
+		a = new int[len + 20];
 		//adding elem to array
 		for (int index = 0; index < len; index++) {
 			System.out.println("enter " + index + " element");
