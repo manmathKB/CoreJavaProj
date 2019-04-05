@@ -23,6 +23,7 @@ public class CheckLeapYear {
 		return year+" not leap year";
 	}
 	
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		int num=0;
 		Scanner sc=null;
